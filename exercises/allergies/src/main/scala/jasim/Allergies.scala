@@ -5,10 +5,8 @@ object Allergies {
   def allergicTo(allergen: Allergen, score: Int): Boolean =
     (score & allergen.code) == allergen.code
 
-  def list(score: Int): List[Allergen] = {
-    println("list")
-      Allergen.allergens.filter(allegen => allergicTo(allegen, score))
-    }
+  def list(score: Int): List[Allergen] =
+    Allergen.allergens.filter(allegen => allergicTo(allegen, score))
 }
 
 
@@ -22,8 +20,6 @@ case class Allergen(code: Int) {
 
 object Allergen {
 
-  val allergens = List(Eggs, Peanuts, Shellfish, Strawberries, Tomatoes, Chocolate, Pollen, Cats)
-
   val Eggs = Allergen(1)
   val Peanuts = Allergen(2)
   val Shellfish = Allergen(4)
@@ -32,4 +28,6 @@ object Allergen {
   val Chocolate = Allergen(32)
   val Pollen = Allergen(64)
   val Cats = Allergen(128)
+
+  val allergens = List(Eggs, Peanuts, Shellfish, Strawberries, Tomatoes, Chocolate, Pollen, Cats)
 }
