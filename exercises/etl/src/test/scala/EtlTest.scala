@@ -1,3 +1,5 @@
+package jasim
+
 import org.scalatest.{Matchers, FunSuite}
 
 /** @version 1.0.0 */
